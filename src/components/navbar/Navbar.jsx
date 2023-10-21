@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-
+import styles from "./navbar.modules.css";
 const Navbar = () => {
   const links = [
     {
@@ -36,16 +36,18 @@ const Navbar = () => {
   ];
 
   return (
-    <div>
-      <Link href="/">Jangid Shabh</Link>
-      <div>
-      {
-      links?.map((link) => (
-          <Link key={link.id} href={link.url}>
+    <div className={styles.container}>
+      <Link href="/" className={styles.logo}>
+        Jangid Shabh
+      </Link>
+      <div className={styles.links}>
+        {links?.map((link) => (
+          <Link key={link.id} href={link.url} className={styles.link}>
             {link.title}
           </Link>
         ))}
       </div>
+      <button className={styles.logout}>Logout</button>
     </div>
   );
 };

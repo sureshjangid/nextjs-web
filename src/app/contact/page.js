@@ -1,9 +1,9 @@
 import React from 'react'
-
-const Contect = () => {
+import styles from './page.module.css';
+const Contact = () => {
   return (
-    <div>contact</div>
+    <div className={styles.container}>contact</div>
   )
 }
 
-export default Contect
+export default Contact
