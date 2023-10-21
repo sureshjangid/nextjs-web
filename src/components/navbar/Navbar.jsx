@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <div className={'containers'}>
       <Link href="/" className={'logo'}>
-        Jangid Shabh
+        Jangid Sahab
       </Link>
       <div className={'links'}>
         {links?.map((link) => (
