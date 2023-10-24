@@ -3,17 +3,28 @@ import styles from "./page.module.css";
 import Image from "next/image";
 
 async function getData(id) {
+  console.log(id,'idid');
   const res = await fetch(`http://localhost:3000/apis/posts/${id}`, {
     cache: "no-store",
   });
-  console.log(res, "datadatadata");
   if (!res.ok) {
     return;
   }
   return res.json();
 }
 
+export async function generateMetadata({ params }) {
+
+  const post = await getData(params.id)
+  return {
+    title: post.title,
+    description: post.desc,
+  };
+}
+
 const Singleblog = async ({ params }) => {
+
+
   const data = await getData(params.id);
   return (
     <div className={styles.container}>
